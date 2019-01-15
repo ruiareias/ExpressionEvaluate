@@ -37,6 +37,9 @@ namespace SimpleExpressionEvaluatorTest
         public string AccessTier { get; set; }
 
         //other - test
+
+        public string NullProp { get; set; }
+
         public bool ReceiveBenefits { get; set; }
 
         public void SetCanReceiveBenefits(bool receiveBenefits)

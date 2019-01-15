@@ -39,6 +39,14 @@ namespace SimpleExpressionEvaluatorTests
         }
 
         [TestMethod]
+        public void TestNullAndNot()
+        {
+            string text = "NullProp is NULL && SpendLevel ! 'xpto1'";
+            bool result = this.Evaluate(text);
+            Assert.AreEqual<bool>(result, true);
+        }
+
+        [TestMethod]
         public void TestPerformance()
         {
             Stopwatch stopwatch = new Stopwatch();

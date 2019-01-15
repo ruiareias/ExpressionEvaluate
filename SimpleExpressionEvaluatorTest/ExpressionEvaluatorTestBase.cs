@@ -88,7 +88,8 @@ namespace SimpleExpressionEvaluatorTests
                 HasWishListProducts = true,
                 HasMultipleAddresses = false,
                 SpendLevel = "xpto",
-                AccessTier = "tier1"
+                AccessTier = "tier1",
+                NullProp = null
             };
         }
 
