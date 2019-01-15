@@ -1,0 +1,17 @@
+C:\temp\ExpressionEvaluater\ExpressionEvaluate\ExpressionEvaluate\bin\Debug\netstandard2.0\LikeParser.deps.json
+C:\temp\ExpressionEvaluater\ExpressionEvaluate\ExpressionEvaluate\bin\Debug\netstandard2.0\LikeParser.dll
+C:\temp\ExpressionEvaluater\ExpressionEvaluate\ExpressionEvaluate\bin\Debug\netstandard2.0\LikeParser.pdb
+C:\temp\ExpressionEvaluater\ExpressionEvaluate\ExpressionEvaluate\obj\Debug\netstandard2.0\LikeParser.csproj.CoreCompileInputs.cache
+C:\temp\ExpressionEvaluater\ExpressionEvaluate\ExpressionEvaluate\obj\Debug\netstandard2.0\LikeParser.AssemblyInfoInputs.cache
+C:\temp\ExpressionEvaluater\ExpressionEvaluate\ExpressionEvaluate\obj\Debug\netstandard2.0\LikeParser.AssemblyInfo.cs
+C:\temp\ExpressionEvaluater\ExpressionEvaluate\ExpressionEvaluate\obj\Debug\netstandard2.0\LikeParser.dll
+C:\temp\ExpressionEvaluater\ExpressionEvaluate\ExpressionEvaluate\obj\Debug\netstandard2.0\LikeParser.pdb
+C:\temp\ExpressionEvaluater\ExpressionEvaluate\ExpressionEvaluate\obj\Debug\netstandard2.0\LikeParser.csprojAssemblyReference.cache
+C:\git\tests\ExpressionEvaluate\ExpressionEvaluate\bin\Debug\netstandard2.0\LikeParser.deps.json
+C:\git\tests\ExpressionEvaluate\ExpressionEvaluate\bin\Debug\netstandard2.0\LikeParser.dll
+C:\git\tests\ExpressionEvaluate\ExpressionEvaluate\bin\Debug\netstandard2.0\LikeParser.pdb
+C:\git\tests\ExpressionEvaluate\ExpressionEvaluate\obj\Debug\netstandard2.0\LikeParser.csproj.CoreCompileInputs.cache
+C:\git\tests\ExpressionEvaluate\ExpressionEvaluate\obj\Debug\netstandard2.0\LikeParser.AssemblyInfoInputs.cache
+C:\git\tests\ExpressionEvaluate\ExpressionEvaluate\obj\Debug\netstandard2.0\LikeParser.AssemblyInfo.cs
+C:\git\tests\ExpressionEvaluate\ExpressionEvaluate\obj\Debug\netstandard2.0\LikeParser.dll
+C:\git\tests\ExpressionEvaluate\ExpressionEvaluate\obj\Debug\netstandard2.0\LikeParser.pdb
