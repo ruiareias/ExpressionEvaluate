@@ -3,7 +3,7 @@
 namespace SimpleExpressionEvaluatorTests
 {
     [TestClass]
-    public class ExpressionEvaluatorTest : ExpressionEvaluatorTestBase
+    public class TestMethod : ExpressionEvaluatorTestBase
     {
         [TestMethod]
         public void BasicTest()
@@ -25,6 +25,14 @@ namespace SimpleExpressionEvaluatorTests
         public void TestSet()
         {
             string text = "(HasPurchased = true && PageViewsCount > (10 * 2) && LastKnownVisit <= '2019-01-20') || SpendLevel = 'xpto1' set SetCanReceiveBenefits(true)";
+            bool result = this.Setup(text);
+            Assert.AreEqual<bool>(result, true);
+        }
+
+        [TestMethod]
+        public void TestLists()
+        {
+            string text = "(HasPurchased = true ";
             bool result = this.Setup(text);
             Assert.AreEqual<bool>(result, true);
         }

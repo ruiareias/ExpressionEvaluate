@@ -16,34 +16,74 @@ namespace SimpleExpressionEvaluatorTests
             {
                 HasPurchased = true,
                 Visits = 20,
-                VisitsBySubfolder = new System.Collections.Generic.Dictionary<string, int>()
+                VisitsBySubfolder = new System.Collections.Generic.List<KeyValue>()
                 {
-                    { "pt", 34},
-                    { "us", 2},
+                    new KeyValue()
+                    {
+                        key = "pt",
+                        value = 34
+                    },
+                    new KeyValue()
+                    {
+                        key = "us",
+                        value = 2
+                    }
                 },
                 HasPromocodeAvailable = true,
                 PageViewsCount = 36,
-                PageViewsByDesigner = new System.Collections.Generic.Dictionary<string, int>()
+                PageViewsByDesigner = new System.Collections.Generic.List<KeyValue>()
                 {
-                    { "gucci", 3},
-                    { "versace", 5},
+                    new KeyValue()
+                    {
+                        key = "gucci",
+                        value = 2
+                    },
+                    new KeyValue()
+                    {
+                        key = "versace",
+                        value = 5
+                    }
                 },
-                PageViewsByType = new System.Collections.Generic.Dictionary<string, int>()
+                PageViewsByType = new System.Collections.Generic.List<KeyValue>()
                 {
-                    { "shoes", 30},
-                    { "coats", 12},
+                    new KeyValue()
+                    {
+                        key = "shoes",
+                        value = 30
+                    },
+                    new KeyValue()
+                    {
+                        key = "coats",
+                        value = 12
+                    }
                 },
                 Returning = true,
-                Channel = new System.Collections.Generic.Dictionary<string, int>()
+                Channel = new System.Collections.Generic.List<KeyValue>()
                 {
-                    { "aff", 12},
-                    { "direct", 11},
+                    new KeyValue()
+                    {
+                        key = "aff",
+                        value = 12
+                    },
+                    new KeyValue()
+                    {
+                        key = "direct",
+                        value = 11
+                    }
                 },
                 LastKnownVisit = new DateTime(2019, 1, 13),
-                VisitsByDesigner = new System.Collections.Generic.Dictionary<string, int>()
+                VisitsByDesigner = new System.Collections.Generic.List<KeyValue>()
                 {
-                    { "gucci", 33},
-                    { "versace", 40},
+                    new KeyValue()
+                    {
+                        key = "gucci",
+                        value = 33
+                    },
+                    new KeyValue()
+                    {
+                        key = "versace",
+                        value = 40
+                    }
                 },
                 HasWishListProducts = true,
                 HasMultipleAddresses = false,

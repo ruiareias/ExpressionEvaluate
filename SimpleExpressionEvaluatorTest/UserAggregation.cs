@@ -10,23 +10,23 @@ namespace SimpleExpressionEvaluatorTest
 
         public int Visits { get; set; }
 
-        public Dictionary<string, int> VisitsBySubfolder { get; set; }
+        public List<KeyValue> VisitsBySubfolder { get; set; }
 
         public bool HasPromocodeAvailable { get; set; }
 
         public int PageViewsCount { get; set; }
 
-        public Dictionary<string, int> PageViewsByDesigner { get; set; }
+        public List<KeyValue> PageViewsByDesigner { get; set; }
 
-        public Dictionary<string, int> PageViewsByType { get; set; }
+        public List<KeyValue> PageViewsByType { get; set; }
 
         public bool Returning { get; set; }
 
-        public Dictionary<string, int> Channel { get; set; }
+        public List<KeyValue> Channel { get; set; }
 
         public DateTime LastKnownVisit { get; set; }
 
-        public Dictionary<string, int> VisitsByDesigner { get; set; }
+        public List<KeyValue> VisitsByDesigner { get; set; }
 
         public bool HasWishListProducts { get; set; }
 
@@ -37,11 +37,18 @@ namespace SimpleExpressionEvaluatorTest
         public string AccessTier { get; set; }
 
         //other - test
-        public bool ReceiveBenefits { get; set; }   
+        public bool ReceiveBenefits { get; set; }
 
         public void SetCanReceiveBenefits(bool receiveBenefits)
         {
             ReceiveBenefits = receiveBenefits;
         }
+    }
+
+    public class KeyValue
+    {
+        public string key { get; set; }
+
+        public int value { get; set; }
     }
 }
