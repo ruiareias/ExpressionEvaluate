@@ -39,6 +39,24 @@ namespace SimpleExpressionEvaluator.Lexer
         IS = 28,
         COMMA = 29,
         NULL = 30,
-        LIKE = 31
+        LIKE = 31,
+        FIELD = 32,
+        COLLECTION = 33,
+        COUNT = 34,
+        AVERAGE = 35,
+        IN = 36,
+        NOTIN = 37,
+        MAX = 38,
+        MIN = 39,
+        SUM = 40,
+        OPENSQUAREBRACKET = 41,
+        CLOSESQUAREBRACKET = 42,
+        FILTER = 43,
+        TRIM = 44,
+        LEFTTRIM = 45,
+        RIGHTTRIM = 46,
+        LOWER = 47,
+        UPPER = 48,
+        LENGTH = 49
     }
 }

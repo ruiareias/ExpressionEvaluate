@@ -23,9 +23,9 @@ namespace SimpleExpressionEvaluatorTests
         }
 
         [TestMethod]
-        public void TestLikeAndSet()
+        public void TestLike()
         {
-            string text = "(HasPurchased = true && PageViewsCount > (10 * 2) && LastKnownVisit <= '2019-01-20') && SpendLevel like 'xpt?' set SetCanReceiveBenefits(true)";
+            string text = "(HasPurchased = true && PageViewsCount > (10 * 2) && LastKnownVisit <= '2019-01-20') && SpendLevel like 'xpt?'";
             bool result = this.Evaluate(text);
             Assert.AreEqual<bool>(result, true);
         }
@@ -39,9 +39,9 @@ namespace SimpleExpressionEvaluatorTests
         }
 
         [TestMethod]
-        public void TestNullAndNot()
+        public void TestNot()
         {
-            string text = "NullProp is NULL && SpendLevel ! 'xpto1'";
+            string text = "SpendLevel ! 'xpto1'";
             bool result = this.Evaluate(text);
             Assert.AreEqual<bool>(result, true);
         }
@@ -58,7 +58,7 @@ namespace SimpleExpressionEvaluatorTests
                 this.Evaluate(text);
             }
             stopwatch.Stop();
-            Assert.IsTrue(stopwatch.ElapsedMilliseconds < 3000);
+            Assert.IsTrue(stopwatch.ElapsedMilliseconds < 4000);
         }
     }
 }

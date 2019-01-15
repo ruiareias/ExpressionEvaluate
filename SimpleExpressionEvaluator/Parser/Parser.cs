@@ -44,6 +44,27 @@ namespace SimpleExpressionEvaluator.Parser
                     Enum.GetName(typeof(TokenType), token) + "; " + lookahead.ToString());
         }
 
+        public Token MatchToken(TokenType token)
+        {
+            var node = lookahead[lookaheadIndex];
+            if (lookahead[lookaheadIndex].Type_ == token)
+                ConsumeNextToken();
+            else
+                throw new Exception("expecting " +
+                    Enum.GetName(typeof(TokenType), token) + "; " + lookahead.ToString());
+            return node;
+        }
+
+        public Token NextToken()
+        {
+            return input.LookAhead();
+        }
+
+        public void Rewind()
+        {
+            input.Rewind();            
+        }
+
         public bool CheckParserPath(TokenType token)
         {
             if (lookahead[lookaheadIndex].Type_ == token)

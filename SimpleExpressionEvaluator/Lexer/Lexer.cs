@@ -22,6 +22,7 @@ namespace SimpleExpressionEvaluator.Lexer
         }
 
         protected int index = -1;
+        protected int savedIndex = -1;
         protected int lookaheadIndex = 0;
 
         public Lexer(string input, int lookaheadCount)
@@ -45,6 +46,14 @@ namespace SimpleExpressionEvaluator.Lexer
             lookaheadIndex = (lookaheadIndex + 1) % lookaheadCount;        
         }
 
+        public void DonotConsumeItem()
+        {            
+            if (index >= input.Length)
+                lookahead[lookaheadIndex] = EOF;
+            else
+                lookahead[lookaheadIndex] = input[index];
+        }
+
         public void Match(char chr)
         {
             if (lookahead[lookaheadIndex] == chr)
@@ -57,6 +66,10 @@ namespace SimpleExpressionEvaluator.Lexer
             }
         }
 
+        public abstract void Rewind();
+
         public abstract Token NextToken();
+
+        public abstract Token LookAhead();
     }
 }

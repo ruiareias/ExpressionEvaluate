@@ -8,7 +8,9 @@ options {
 
 tokens {         
        OPENBRACKET = '(';
-       CLOSEBRACKET = ')';   
+       CLOSEBRACKET = ')'; 
+	   OPENSQUAREBRACKET = '[';
+	   CLOSESQUAREBRACKET = ']';
        POINT = '.';   
        PLUS = '+';  
        MINUS = '-';
@@ -32,6 +34,22 @@ tokens {
 	   ELSE = 'else';
 	   IS = 'is';
 	   NULL = 'null';
+	   FIELD = 'field';
+	   COLLECTION = 'collection';
+	   COUNT = 'count';
+	   AVERAGE = 'average';
+	   IN = 'in';
+	   NOTIN = 'notin';
+	   MAX = 'max';
+	   MIN = 'min';
+	   SUM = 'sum';	  
+	   FILTER = 'filter';
+	   LOWER = 'lower';
+	   UPPER = 'upper';
+	   LENGTH = 'length';
+	   TRIM = 'trim';
+	   RIGHTTRIM = 'righttrim';
+	   LEFTTRIM = 'lefttrim';
       }
 
 rule:    

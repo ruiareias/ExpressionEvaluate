@@ -13,6 +13,53 @@ namespace SimpleExpressionEvaluator.Lexer
 
         }
 
+        public override Token LookAhead()
+        {
+            savedIndex = index;
+            while (lookahead[lookaheadIndex] != EOF)
+            {
+                switch (lookahead[lookaheadIndex])
+                {
+                    case '.': DonotConsumeItem(); return new Token(TokenType.POINT, ".");
+                    //case ',': ConsumeItem(); return new Token(TokenType.COMMA, ",");
+                    case '+': DonotConsumeItem(); return Plus();
+                    case ',': DonotConsumeItem(); return Comma();
+                    case '-': DonotConsumeItem(); return Minus();
+                    case '*': DonotConsumeItem(); return Multibly();
+                    case '/': DonotConsumeItem(); return Divide();
+                    case '%': DonotConsumeItem(); return Modulo();
+                    case '<': DonotConsumeItem(); return Smaller();
+                    case '>': DonotConsumeItem(); return Greater();
+                    case '=': DonotConsumeItem(); return Equal();
+                    case '!': DonotConsumeItem(); return Unequal();
+                    case '"': DonotConsumeItem(); return String();
+                    case '\'': DonotConsumeItem(); return SingleQuoteString();
+                    case '|': DonotConsumeItem(); return Or();
+                    case '&': DonotConsumeItem(); return And();
+                    case '(': DonotConsumeItem(); return new Token(TokenType.OPENBRACKET, "(");
+                    case ')': DonotConsumeItem(); return new Token(TokenType.CLOSEBRACKET, ")");
+                    case '[': ConsumeItem(); return new Token(TokenType.OPENSQUAREBRACKET, "[");
+                    case ']': ConsumeItem(); continue;
+                    default:
+                        if (IsLetter())
+                        {
+                            return Terminal();
+                        }
+                        if (IsNumber())
+                        {
+                            return Number();
+                        }
+                        if (IsWhitespace())
+                        {
+                            ConsumeItem();
+                            continue;
+                        }
+                        throw new Exception("invalid character." + lookahead[lookaheadIndex]);
+                }
+            }
+            return new Token(TokenType.EOF, "<EOF>");
+        }
+
         public override Token NextToken()
         {
             while (lookahead[lookaheadIndex] != EOF)
@@ -37,6 +84,8 @@ namespace SimpleExpressionEvaluator.Lexer
                     case '&': ConsumeItem(); return And();                    
                     case '(': ConsumeItem(); return new Token(TokenType.OPENBRACKET, "(");
                     case ')': ConsumeItem(); return new Token(TokenType.CLOSEBRACKET, ")");
+                    case '[': ConsumeItem(); return new Token(TokenType.OPENSQUAREBRACKET, "[");
+                    case ']': ConsumeItem(); return new Token(TokenType.CLOSESQUAREBRACKET, "]");
                     default:                        
                         if (IsLetter())
                         {
@@ -50,7 +99,7 @@ namespace SimpleExpressionEvaluator.Lexer
                         {
                             ConsumeItem();
                             continue;
-                        }
+                        }                        
                         throw new Exception("invalid character." + lookahead[lookaheadIndex]);
                 }
             }
@@ -251,37 +300,56 @@ namespace SimpleExpressionEvaluator.Lexer
             {
                 return new Token(TokenType.BOOL, stringBuilder.ToString());
             }
-            switch (stringBuilder.ToString())
-            {             
-                case "set" :
-                case "SET" :
-                case "Set" :
-                    return new Token(TokenType.SET, stringBuilder.ToString());
-                case "then":
-                case "THEN":
-                case "Then":
-                    return new Token(TokenType.THEN, stringBuilder.ToString());
-                case "else":
-                case "ELSE":
-                case "Else":
-                    return new Token(TokenType.ELSE, stringBuilder.ToString());
-                case "is":
-                case "IS":
-                case "Is":
-                    return new Token(TokenType.IS, stringBuilder.ToString());
-                case "null":
-                case "NULL":
-                case "Null":
-                    return new Token(TokenType.NULL, stringBuilder.ToString());
-                case "like":
-                case "LIKE":
-                case "Like":
-                    return new Token(TokenType.LIKE, stringBuilder.ToString());
+            switch (stringBuilder.ToString().ToUpper())
+            {                
+                case "SET":                
+                    return new Token(TokenType.SET, stringBuilder.ToString());                
+                case "THEN":               
+                    return new Token(TokenType.THEN, stringBuilder.ToString());                
+                case "ELSE":                
+                    return new Token(TokenType.ELSE, stringBuilder.ToString());               
+                case "IS":              
+                    return new Token(TokenType.IS, stringBuilder.ToString());                
+                case "NULL":               
+                    return new Token(TokenType.NULL, stringBuilder.ToString());               
+                case "LIKE":                
+                    return new Token(TokenType.LIKE, stringBuilder.ToString());                
+                case "IN":
+                    return new Token(TokenType.IN, stringBuilder.ToString());
+                case "NOTIN":
+                    return new Token(TokenType.NOTIN, stringBuilder.ToString());
+                case "MIN":
+                    return new Token(TokenType.MIN, stringBuilder.ToString());
+                case "MAX":
+                    return new Token(TokenType.MAX, stringBuilder.ToString());
+                case "AVERAGE":
+                    return new Token(TokenType.AVERAGE, stringBuilder.ToString());
+                case "SUM":
+                    return new Token(TokenType.SUM, stringBuilder.ToString());
+                case "COUNT":
+                    return new Token(TokenType.COUNT, stringBuilder.ToString());
+                case "FIELD":
+                    return new Token(TokenType.FIELD, stringBuilder.ToString());             
+                case "COLLECTION":
+                    return new Token(TokenType.COLLECTION, stringBuilder.ToString());
+                case "FILTER":
+                    return new Token(TokenType.FILTER, stringBuilder.ToString());
+                case "LOWER":
+                    return new Token(TokenType.LOWER, stringBuilder.ToString());
+                case "UPPER":
+                    return new Token(TokenType.UPPER, stringBuilder.ToString());
+                case "LENGTH":
+                    return new Token(TokenType.LENGTH, stringBuilder.ToString());
+                case "TRIM":
+                    return new Token(TokenType.TRIM, stringBuilder.ToString());
+                case "RIGHTTRIM":
+                    return new Token(TokenType.RIGHTTRIM, stringBuilder.ToString());
+                case "LEFTTRIM":
+                    return new Token(TokenType.LEFTTRIM, stringBuilder.ToString());
                 default:
                     return new Token(TokenType.IDENT, stringBuilder.ToString());
             }
         }
-
 
         private void Whitespace()
         {
@@ -333,11 +401,16 @@ namespace SimpleExpressionEvaluator.Lexer
             return (lookahead[lookaheadIndex] >= 'a' && lookahead[lookaheadIndex] <= 'z') ||
                 (lookahead[lookaheadIndex] >= 'A' && lookahead[lookaheadIndex] <= 'Z') ||
                 lookahead[lookaheadIndex] == ';' || lookahead[lookaheadIndex] == '{' ||
-                lookahead[lookaheadIndex] == '}' || lookahead[lookaheadIndex] == '[' ||
-                lookahead[lookaheadIndex] == ']' || lookahead[lookaheadIndex] == '_' ||
+                lookahead[lookaheadIndex] == '}' ||
+                lookahead[lookaheadIndex] == '_' ||
                 lookahead[lookaheadIndex] == '=' || lookahead[lookaheadIndex] == '!' ||
                 lookahead[lookaheadIndex] == '"' || lookahead[lookaheadIndex] == '%' ||
                 lookahead[lookaheadIndex] == '@' || (lookahead[lookaheadIndex] >= '0' && lookahead[lookaheadIndex] <= '9');
+        }
+
+        public override void Rewind()
+        {
+            index = savedIndex;            
         }
     }
 }
