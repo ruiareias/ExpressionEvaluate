@@ -1,7 +1,3 @@
-C:\git\tests\ExpressionEvaluate\RuleEngineTests\obj\Debug\netcoreapp2.0\RuleEngineTests.csprojAssemblyReference.cache
-C:\git\tests\ExpressionEvaluate\RuleEngineTests\obj\Debug\netcoreapp2.0\RuleEngineTests.csproj.CoreCompileInputs.cache
-C:\git\tests\ExpressionEvaluate\RuleEngineTests\obj\Debug\netcoreapp2.0\RuleEngineTests.AssemblyInfoInputs.cache
-C:\git\tests\ExpressionEvaluate\RuleEngineTests\obj\Debug\netcoreapp2.0\RuleEngineTests.AssemblyInfo.cs
 C:\git\tests\ExpressionEvaluate\RuleEngineTests\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\git\tests\ExpressionEvaluate\RuleEngineTests\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\git\tests\ExpressionEvaluate\RuleEngineTests\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -9,13 +5,17 @@ C:\git\tests\ExpressionEvaluate\RuleEngineTests\bin\Debug\netcoreapp2.0\RuleEngi
 C:\git\tests\ExpressionEvaluate\RuleEngineTests\bin\Debug\netcoreapp2.0\RuleEngineTests.runtimeconfig.json
 C:\git\tests\ExpressionEvaluate\RuleEngineTests\bin\Debug\netcoreapp2.0\RuleEngineTests.runtimeconfig.dev.json
 C:\git\tests\ExpressionEvaluate\RuleEngineTests\bin\Debug\netcoreapp2.0\RuleEngineTests.dll
+C:\git\tests\ExpressionEvaluate\RuleEngineTests\bin\Debug\netcoreapp2.0\RuleEngineTests.pdb
 C:\git\tests\ExpressionEvaluate\RuleEngineTests\bin\Debug\netcoreapp2.0\LikeParser.dll
 C:\git\tests\ExpressionEvaluate\RuleEngineTests\bin\Debug\netcoreapp2.0\RuleEngine.dll
 C:\git\tests\ExpressionEvaluate\RuleEngineTests\bin\Debug\netcoreapp2.0\SimpleExpressionEvaluator.dll
 C:\git\tests\ExpressionEvaluate\RuleEngineTests\bin\Debug\netcoreapp2.0\LikeParser.pdb
 C:\git\tests\ExpressionEvaluate\RuleEngineTests\bin\Debug\netcoreapp2.0\RuleEngine.pdb
 C:\git\tests\ExpressionEvaluate\RuleEngineTests\bin\Debug\netcoreapp2.0\SimpleExpressionEvaluator.pdb
+C:\git\tests\ExpressionEvaluate\RuleEngineTests\obj\Debug\netcoreapp2.0\RuleEngineTests.csprojAssemblyReference.cache
+C:\git\tests\ExpressionEvaluate\RuleEngineTests\obj\Debug\netcoreapp2.0\RuleEngineTests.csproj.CoreCompileInputs.cache
+C:\git\tests\ExpressionEvaluate\RuleEngineTests\obj\Debug\netcoreapp2.0\RuleEngineTests.AssemblyInfoInputs.cache
+C:\git\tests\ExpressionEvaluate\RuleEngineTests\obj\Debug\netcoreapp2.0\RuleEngineTests.AssemblyInfo.cs
 C:\git\tests\ExpressionEvaluate\RuleEngineTests\obj\Debug\netcoreapp2.0\RuleEngineTests.csproj.CopyComplete
-C:\git\tests\ExpressionEvaluate\RuleEngineTests\bin\Debug\netcoreapp2.0\RuleEngineTests.pdb
 C:\git\tests\ExpressionEvaluate\RuleEngineTests\obj\Debug\netcoreapp2.0\RuleEngineTests.dll
 C:\git\tests\ExpressionEvaluate\RuleEngineTests\obj\Debug\netcoreapp2.0\RuleEngineTests.pdb

@@ -645,9 +645,7 @@ namespace RuleEngineTests
                 else
                     Debug.WriteLine("Value: " + item.Item1.Name + " with ProcessingRule: " + item.Item2.ProcessingRule + item.Item2.Value + " failed.");
             }
-        }
-
-        
+        }        
 
         [TestMethod]
         public void SimpleExpressionLikeMethod()
