@@ -94,7 +94,7 @@ namespace SimpleExpressionEvaluatorTests
 
         protected UserAggregation userAggregation { get; set; }
 
-        protected bool Setup(string rule)
+        protected bool Evaluate(string rule)
         {
             ExpressionEvaluatorLexer expressionEvaluatorLexer = new ExpressionEvaluatorLexer(rule, 1);
             ExpressionEvaluatorParser expressionEvaluatorParser = new ExpressionEvaluatorParser(expressionEvaluatorLexer);

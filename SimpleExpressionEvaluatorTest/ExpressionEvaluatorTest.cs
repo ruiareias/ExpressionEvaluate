@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Diagnostics;
 
 namespace SimpleExpressionEvaluatorTests
 {
@@ -9,7 +10,7 @@ namespace SimpleExpressionEvaluatorTests
         public void BasicTest()
         {
             string text = "(HasPurchased = true && PageViewsCount > (10 * 2) && LastKnownVisit <= '2019-01-20') || SpendLevel = 'xpto1'";
-            bool result = this.Setup(text);            
+            bool result = this.Evaluate(text);            
             Assert.AreEqual<bool>(result, true);
         }
 
@@ -17,24 +18,39 @@ namespace SimpleExpressionEvaluatorTests
         public void BasicTestWithMathOperations()
         {
             string text = "(5 * 6 + 7.5 - 0.5) + Visits = 57 && SpendLevel = 'xpto' && PageViewsCount = Visits + 16 && PageViewsCount >= Visits / 20 && (5 + 3 > 2 * 1)";
-            bool result = this.Setup(text);
+            bool result = this.Evaluate(text);
             Assert.AreEqual<bool>(result, true);
         }
 
         [TestMethod]
-        public void TestSet()
+        public void TestLikeAndSet()
         {
-            string text = "(HasPurchased = true && PageViewsCount > (10 * 2) && LastKnownVisit <= '2019-01-20') || SpendLevel = 'xpto1' set SetCanReceiveBenefits(true)";
-            bool result = this.Setup(text);
+            string text = "(HasPurchased = true && PageViewsCount > (10 * 2) && LastKnownVisit <= '2019-01-20') && SpendLevel like 'xpt?' set SetCanReceiveBenefits(true)";
+            bool result = this.Evaluate(text);
             Assert.AreEqual<bool>(result, true);
         }
 
         [TestMethod]
-        public void TestLists()
+        public void TestThenElse()
         {
-            string text = "(HasPurchased = true ";
-            bool result = this.Setup(text);
+            string text = "(PageViewsCount > 10) then SetCanReceiveBenefits(true) else SetCancelBenefits(true)";
+            bool result = this.Evaluate(text);
             Assert.AreEqual<bool>(result, true);
+        }
+
+        [TestMethod]
+        public void TestPerformance()
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            for (int c = 0; c <100000; c++)
+            {
+                string text = "(5 * 6 + 7.5 - 0.5) + Visits = 57 && SpendLevel = 'xpto' && PageViewsCount = Visits + 16";
+                this.Evaluate(text);
+            }
+            stopwatch.Stop();
+            Assert.IsTrue(stopwatch.ElapsedMilliseconds < 3000);
         }
     }
 }
