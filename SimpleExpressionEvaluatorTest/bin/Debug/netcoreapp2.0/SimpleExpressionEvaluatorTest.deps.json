@@ -11,6 +11,7 @@
           "MSTest.TestAdapter": "1.4.0",
           "MSTest.TestFramework": "1.4.0",
           "Microsoft.NET.Test.Sdk": "15.9.0",
+          "RuleEngine": "1.0.0",
           "SimpleExpressionEvaluator": "1.0.0"
         },
         "runtime": {
@@ -1027,6 +1028,16 @@
           "LikeParser.dll": {}
         }
       },
+      "RuleEngine/1.0.0": {
+        "dependencies": {
+          "LikeParser": "1.0.0",
+          "Microsoft.CSharp": "4.5.0",
+          "SimpleExpressionEvaluator": "1.0.0"
+        },
+        "runtime": {
+          "RuleEngine.dll": {}
+        }
+      },
       "SimpleExpressionEvaluator/1.0.0": {
         "dependencies": {
           "LikeParser": "1.0.0",
@@ -1542,6 +1553,11 @@
       "hashPath": "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
     },
     "LikeParser/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RuleEngine/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

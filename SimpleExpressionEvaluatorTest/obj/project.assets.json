@@ -1608,6 +1608,21 @@
           "bin/placeholder/LikeParser.dll": {}
         }
       },
+      "RuleEngine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "LikeParser": "1.0.0",
+          "Microsoft.CSharp": "4.5.0",
+          "SimpleExpressionEvaluator": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RuleEngine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RuleEngine.dll": {}
+        }
+      },
       "SimpleExpressionEvaluator/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -5829,6 +5844,11 @@
       "path": "../ExpressionEvaluate/LikeParser.csproj",
       "msbuildProject": "../ExpressionEvaluate/LikeParser.csproj"
     },
+    "RuleEngine/1.0.0": {
+      "type": "project",
+      "path": "../RuleEngine/RuleEngine.csproj",
+      "msbuildProject": "../RuleEngine/RuleEngine.csproj"
+    },
     "SimpleExpressionEvaluator/1.0.0": {
       "type": "project",
       "path": "../SimpleExpressionEvaluator/SimpleExpressionEvaluator.csproj",
@@ -5841,6 +5861,7 @@
       "MSTest.TestFramework >= 1.4.0",
       "Microsoft.NET.Test.Sdk >= 15.9.0",
       "Microsoft.NETCore.App >= 2.0.0",
+      "RuleEngine >= 1.0.0",
       "SimpleExpressionEvaluator >= 1.0.0"
     ]
   },
@@ -5875,6 +5896,9 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
+            "C:\\git\\tests\\ExpressionEvaluate\\RuleEngine\\RuleEngine.csproj": {
+              "projectPath": "C:\\git\\tests\\ExpressionEvaluate\\RuleEngine\\RuleEngine.csproj"
+            },
             "C:\\git\\tests\\ExpressionEvaluate\\SimpleExpressionEvaluator\\SimpleExpressionEvaluator.csproj": {
               "projectPath": "C:\\git\\tests\\ExpressionEvaluate\\SimpleExpressionEvaluator\\SimpleExpressionEvaluator.csproj"
             }

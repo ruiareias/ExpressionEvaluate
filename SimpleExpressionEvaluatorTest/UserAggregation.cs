@@ -1,32 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace SimpleExpressionEvaluatorTest
 {
-    public class UserAggregation
+    public class UserAggregation : RuleEngineExtensions
     {
         public bool HasPurchased { get; set; }
 
         public int Visits { get; set; }
 
-        public List<KeyValue> VisitsBySubfolder { get; set; }
+        public IList<string> VisitsBySubfolder { get; set; }
 
         public bool HasPromocodeAvailable { get; set; }
 
         public int PageViewsCount { get; set; }
 
-        public List<KeyValue> PageViewsByDesigner { get; set; }
+        public IDictionary<string, int> PageViewsByDesigner { get; set; }
 
-        public List<KeyValue> PageViewsByType { get; set; }
+        public IList<string> PageViewsByType { get; set; }
 
         public bool Returning { get; set; }
 
-        public List<KeyValue> Channel { get; set; }
+        public IList<string> Channel { get; set; }
 
         public DateTime LastKnownVisit { get; set; }
 
-        public List<KeyValue> VisitsByDesigner { get; set; }
+        public List<string> VisitsByDesigner { get; set; }
 
         public bool HasWishListProducts { get; set; }
 
@@ -46,12 +47,29 @@ namespace SimpleExpressionEvaluatorTest
         {
             ReceiveBenefits = receiveBenefits;
         }
-    }
 
-    public class KeyValue
-    {
-        public string key { get; set; }
+        public int GetPageViewsCount()
+        {
+            return PageViewsCount;
+        }
 
-        public int value { get; set; }
+        //public bool FilterBySubFolder(string subfolder)
+        //{
+        //    return VisitsBySubfolder.Where(x=> x == subfolder).Any();
+        //}
+
+        //public bool FilterPageViewsByDesigner(string key, int min)
+        //{
+        //    PageViewsByDesigner.TryGetValue(key , out int value);
+
+        //    return value > 0 ? value >= min : false;
+        //}
+
+        //public int GetPageViewsByDesigner(string key)
+        //{
+        //    PageViewsByDesigner.TryGetValue(key, out int value);
+
+        //    return value;
+        //}
     }
 }

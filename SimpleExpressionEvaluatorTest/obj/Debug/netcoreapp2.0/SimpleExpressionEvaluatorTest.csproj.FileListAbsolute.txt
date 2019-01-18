@@ -36,3 +36,5 @@ C:\git\tests\ExpressionEvaluate\SimpleExpressionEvaluatorTest\obj\Debug\netcorea
 C:\git\tests\ExpressionEvaluate\SimpleExpressionEvaluatorTest\obj\Debug\netcoreapp2.0\SimpleExpressionEvaluatorTest.csproj.CopyComplete
 C:\git\tests\ExpressionEvaluate\SimpleExpressionEvaluatorTest\obj\Debug\netcoreapp2.0\SimpleExpressionEvaluatorTest.dll
 C:\git\tests\ExpressionEvaluate\SimpleExpressionEvaluatorTest\obj\Debug\netcoreapp2.0\SimpleExpressionEvaluatorTest.pdb
+C:\git\tests\ExpressionEvaluate\SimpleExpressionEvaluatorTest\bin\Debug\netcoreapp2.0\RuleEngine.dll
+C:\git\tests\ExpressionEvaluate\SimpleExpressionEvaluatorTest\bin\Debug\netcoreapp2.0\RuleEngine.pdb

@@ -4,6 +4,7 @@ using SimpleExpressionEvaluator.Lexer;
 using SimpleExpressionEvaluator.Parser;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SimpleExpressionEvaluatorTest;
+using System.Collections.Generic;
 
 namespace SimpleExpressionEvaluatorTests
 {
@@ -16,75 +17,20 @@ namespace SimpleExpressionEvaluatorTests
             {
                 HasPurchased = true,
                 Visits = 20,
-                VisitsBySubfolder = new System.Collections.Generic.List<KeyValue>()
+                VisitsBySubfolder = new System.Collections.Generic.List<string>()
                 {
-                    new KeyValue()
-                    {
-                        key = "pt",
-                        value = 34
-                    },
-                    new KeyValue()
-                    {
-                        key = "us",
-                        value = 2
-                    }
+                    "pt",
+                    "us"
+                },
+                PageViewsByDesigner = new Dictionary<string, int>()
+                {
+                    { "des1", 2 },
+                    { "des2", 4 }
                 },
                 HasPromocodeAvailable = true,
                 PageViewsCount = 36,
-                PageViewsByDesigner = new System.Collections.Generic.List<KeyValue>()
-                {
-                    new KeyValue()
-                    {
-                        key = "gucci",
-                        value = 2
-                    },
-                    new KeyValue()
-                    {
-                        key = "versace",
-                        value = 5
-                    }
-                },
-                PageViewsByType = new System.Collections.Generic.List<KeyValue>()
-                {
-                    new KeyValue()
-                    {
-                        key = "shoes",
-                        value = 30
-                    },
-                    new KeyValue()
-                    {
-                        key = "coats",
-                        value = 12
-                    }
-                },
                 Returning = true,
-                Channel = new System.Collections.Generic.List<KeyValue>()
-                {
-                    new KeyValue()
-                    {
-                        key = "aff",
-                        value = 12
-                    },
-                    new KeyValue()
-                    {
-                        key = "direct",
-                        value = 11
-                    }
-                },
                 LastKnownVisit = new DateTime(2019, 1, 13),
-                VisitsByDesigner = new System.Collections.Generic.List<KeyValue>()
-                {
-                    new KeyValue()
-                    {
-                        key = "gucci",
-                        value = 33
-                    },
-                    new KeyValue()
-                    {
-                        key = "versace",
-                        value = 40
-                    }
-                },
                 HasWishListProducts = true,
                 HasMultipleAddresses = false,
                 SpendLevel = "xpto",
